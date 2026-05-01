@@ -353,3 +353,37 @@ h1 {
     margin-bottom: 8px;
     color: #d1d1d1;
 }
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav ul li {
+        padding: 5px 0;
+    }
+
+    .product-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-img {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .product-info {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
