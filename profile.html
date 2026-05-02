@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - Shopping</title>
+    <title>Profile - TechStore</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -16,32 +15,41 @@
             <li><a href="sign-up.html">sign up</a></li>
         </ul>
     </nav>
+
     <main>
-        <section class="profile-section">
-            <div class="user-info">
-                <img src="user.jpg" alt="Profile Picture" id="profile-img">
-                <h2>Welcome Back!</h2>
-                <div class="info-grid">
-                    <div class="info-box">
-                        <span>Username</span>
-                        <p>Youssef Refaat</p>
-                    </div>
-                    <div class="info-box">
-                        <span>Email</span>
-                        <p>youssef@example.com</p>
-                    </div>
-                    <div class="info-box">
-                        <span>Balance</span>
-                        <p>$1,250.00</p>
-                    </div>
-                </div>
-                <div class="profile-btns">
-                    <button>Edit Profile</button>
-                    <button style="background: #e74c3c;">Logout</button>
-                </div>
+        <h1>My Profile</h1>
+        
+        <section class="user-card">
+            <div class="user-img-area">
+                <img src="img/user.jpg" alt="Profile" id="user-preview">
+                <input type="file" id="upload" accept="image/*" style="display: none;">
+                <label for="upload" class="upload-btn">Update Photo</label>
             </div>
+
+            <form class="user-form">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" value="Youssef Refaat">
+                </div>
+
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" value="youssef@example.com">
+                </div>
+
+                <div class="field">
+                    <label>Account Balance</label>
+                    <div class="balance-box">$1,250.00</div>
+                </div>
+
+                <div class="actions">
+                    <button type="submit">Save Changes</button>
+                    <button type="button" class="out-btn">Logout</button>
+                </div>
+            </form>
         </section>
     </main>
+
     <script src="main.js"></script>
 </body>
 </html>
