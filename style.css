@@ -622,5 +622,92 @@ height: 100px;
   background-color: var(--white);
   color: black;
   font-size: 17px;
-  text-transform: uppercase;
+   .signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.signup-form {
+    background-color: var(--primary-color);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 400px;
+    /* لضمان توسيط محتوى الفورم داخلياً */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.signup-form h2 {
+    color: var(--white);
+    margin-bottom: 30px;
+    font-family: 'Orbitron', sans-serif;
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط الليبل والإنبوت */
+}
+
+.input-group label {
+    display: block;
+    color: #b0bec5;
+    margin-bottom: 8px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    max-width: 320px; /* تحديد عرض أقصى للإنبوت للحفاظ على الشكل */
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    box-sizing: border-box;
+    text-align: center; /* توسيط النص المكتوب داخل الإنبوت */
+}
+
+.signup-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px;
+    background-color: var(--background-light);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.signup-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #b0bec5;
+    width: 100%;
+}
+
+.login-link a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
 }
