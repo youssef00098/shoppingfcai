@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shopping</title>
-
+    <title>Sign Up</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,43 +13,42 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-
             <li><a href="profile.html">Your Profile</a></li>
-
             <li><a href="shopping-list.html">All Products</a></li>
-
             <li><a href="sign-up.html">Sign Up</a></li>
-
             <li><a href="contact-us.html">Contact Us</a></li>
         </ul>
     </nav>
 
     <button id="show">dark mode 🌙</button>
 
-    <div class="signup-container">
-
+    <div class="wellcome">
         <h1>Create Account</h1>
+        
+    </div>
 
-        <form>
+    <section class="sec-form">
 
-            <input type="text" placeholder="Username" required>
+        <form class="contact-form">
+            <p>Create your shopping account</p>
 
-            <input type="email" placeholder="Email" required>
+            <label>Username</label>
+            <input type="text" placeholder="Enter your username">
 
-            <input type="password" placeholder="Password" required>
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email">
 
-            <input type="password" placeholder="Confirm Password" required>
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password">
 
-            <button type="submit">Sign Up</button>
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm your password">
+
+            <button type="submit" id="send-messege">Sign Up</button>
 
         </form>
 
-        <p>
-            Already have an account?
-            <a href="#">Login</a>
-        </p>
-
-    </div>
+    </section>
 
     <script src="main.js"></script>
 
