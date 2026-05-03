@@ -1,42 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shopping</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap" rel="stylesheet">
-
+    <title>University Project - Advanced Login</title>
+    <style>
+        /* التنسيق الأساسي */
+        body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 350px; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .error-msg { color: red; font-size: 12px; display: none; margin-bottom: 10px; } /* رسائل الخطأ */
+    </style>
 </head>
-
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="profile.html"> your profile</a></li>
-            <li> <a href="shopping-list.html">all products</a></li>
-            <li><a href="sign-up.html">sign up</a></li>
-            <li><a href="contact-us.html">contact-us</a></li>
 
-    </nav>
-    <div class="search-box">
-
-<input type="text" id="searchInput" placeholder="Search products...">
-
-<button onclick="searchProduct()">Search</button>
-
+<div class="container">
+    <h2 id="title">Login</h2>
+    <p id="error-text" class="error-msg">Invalid details!</p>
+    
+    <form id="authForm">
+        <div id="nameField" style="display: none;">
+            <input type="text" id="fullName" placeholder="Full Name">
+        </div>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit" id="mainBtn">Login</button>
+    </form>
+    
+    <p style="margin-top:15px; font-size:14px;">
+        <a href="javascript:void(0)" onclick="toggleMode()" id="toggleBtn">Create an account</a>
+    </p>
 </div>
-    <button id="show">dark mode 🌙
-    </button>
-    <h1>Our products</h1>
-    <ul id="img">
-        <li><a href="shopping-list-lap.html"><img src="WhatsApp Image 2026-04-25 at 6.48.14 PM (2).jpeg" alt=""></a></li>
-        <li><a href="shopping-list-phone.html"><img src="WhatsApp Image 2026-04-25 at 6.48.14 PM (1).jpeg" alt=""></a></li>
-        <li><a href="shopping-list-lap-wathes.html"><img src="WhatsApp Image 2026-04-25 at 6.48.14 PM.jpeg"alt=""></a></li>
-        <li><a href="shopping-list-earbuds.html"><img src="WhatsApp Image 2026-04-25 at 6.48.13 PM.jpeg" alt=""></a></li>
-    </ul>
-    <script src="main.js"></script>
-</body>
 
+<script>
+    let isLoginMode = true;
+    const form = document.getElementById('authForm');
+    const errorText = document.getElementById('error-text');
+
+    function toggleMode() {
+        isLoginMode = !isLoginMode;
+        document.getElementById('title').innerText = isLoginMode ? 'Login' : 'Sign Up';
+        document.getElementById('nameField').style.display = isLoginMode ? 'none' : 'block';
+        document.getElementById('mainBtn').innerText = isLoginMode ? 'Login' : 'Register';
+        document.getElementById('toggleBtn').innerText = isLoginMode ? 'Create an account' : 'Back to Login';
+        errorText.style.display = 'none';
+    }
+
+    // --- تنفيذ طلبات الدكتور ---
+
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const pass = document.getElementById('password').value;
+        const name = document.getElementById('fullName').value;
+
+        // 1. Custom Validation (بدون الاعتماد على HTML5)
+        if (email === "" || pass.length < 6) {
+            errorText.innerText = "Please enter valid email and password (min 6 chars)";
+            errorText.style.display = 'block';
+            return;
+        }
+
+        if (isLoginMode) {
+            // 2. Read from Storage (القراءة من الذاكرة)
+            const savedUser = JSON.parse(localStorage.getItem('userData'));
+            
+            if (savedUser && savedUser.email === email && savedUser.pass === pass) {
+                alert("Welcome back, " + savedUser.name);
+                window.location.href = "home.html"; // الربط بباقي الصفحات
+            } else {
+                errorText.innerText = "Wrong email or password!";
+                errorText.style.display = 'block';
+            }
+        } else {
+            // 2. Write to Storage (الكتابة في الذاكرة - حفظ البيانات)
+            const userData = { name: name, email: email, pass: pass };
+            localStorage.setItem('userData', JSON.stringify(userData));
+            alert("Account Created & Saved in Storage!");
+            toggleMode();
+        }
+    };
+</script>
+
+</body>
 </html>
