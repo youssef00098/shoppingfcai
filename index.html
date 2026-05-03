@@ -4,51 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shopping - Home</title>
+    <title>shopping</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap" rel="stylesheet">
 
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a href="profile.html"> your profile</a></li>
-            <li> <a href="shopping-list.html">all products</a></li>
-            <li><a href="sign-up.html">sign up</a></li>
-        </ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html"> Your Profile</a></li>
+            <li> <a href="shopping-list.html">All Aroducts</a></li>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="contact-us.html">Contact-Us</a></li>
     </nav>
-    <button id="show">dark mode
+    <div class="search-box">
+
+<input type="text" id="searchInput" placeholder="Search products...">
+
+<button onclick="searchProduct()">Search</button>
+
+</div>
+    <button id="show">dark mode 🌙
     </button>
     <h1>our pruducts</h1>
     <ul id="img">
-        <li><a href="shopping-list-lap.html"><img src="WhatsApp Image 2026-04-25 at 6.48.14 PM (2).jpeg" alt=""></a>
-        </li>
-        <li><a href="shopping-list-phone.html"><img src="WhatsApp Image 2026-04-25 at 6.48.14 PM (1).jpeg" alt=""></a>
-        </li>
-        <li><a href="shopping-list-earbuds.html"><img src="WhatsApp Image 2026-04-25 at 6.48.14 PM.jpeg" alt=""></a>
-        </li>
-        <li><a href="shopping-list-lap-wathes.html"><img src="WhatsApp Image 2026-04-25 at 6.48.13 PM.jpeg" alt=""></a>
-        </li>
+        <li><a href="shopping-list-lap-wathes.html"><img src="img/WhatsApp Image 2026-04-25 at 6.48.13 PM.jpeg" alt=""></a></li>
+        <li><a href="shopping-list-phone.html"><img src="img/WhatsApp Image 2026-04-25 at 6.48.14 PM (1).jpeg" alt=""></a></li>
+        <li><a href="shopping-list-earbuds.html"><img src="img/WhatsApp Image 2026-04-25 at 6.48.14 PM (2).jpeg" alt=""></a></li>
+        <li><a href="shopping-list-lap.html"><img src="img/WhatsApp Image 2026-04-25 at 6.48.14 PM.jpeg" alt=""></a></li>
     </ul>
-    <ul id="names">
-        <li>
-            <p>laptops</p>
-        </li>
-        <li>
-            <p>phones</p>
-        </li>
-        <li>
-            <p>watctes</p>
-        </li>
-        <li>
-            <p>earbuds</p>
-        </li>
-
-    </ul>
+   
     <script src="main.js"></script>
 </body>
-<footer>
-    <a href="contact-us.html">contact-us</a>
-</footer>
 
 </html>
