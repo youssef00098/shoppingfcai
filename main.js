@@ -7,3 +7,4 @@ function changeimage(img){
 function aadtocart(){
     alert("product added to cart!");
 }
+
