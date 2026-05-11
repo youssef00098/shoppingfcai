@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Sign Up - TechStore</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,28 +24,30 @@
 
     <div class="wellcome">
         <h1>Create Account</h1>
-        
     </div>
 
     <section class="sec-form">
 
-        <form class="contact-form">
+        <form class="contact-form" id="signupForm">
             <p>Create your shopping account</p>
 
             <label>Username</label>
-            <input type="text" placeholder="Enter your username">
+            <input type="text" id="username" placeholder="Enter your username">
+            <span class="error-msg" id="userError" style="color: #e74c3c; font-size: 12px; display: block; min-height: 15px;"></span>
 
             <label>Email</label>
-            <input type="email" placeholder="Enter your email">
+            <input type="email" id="email" placeholder="Enter your email">
+            <span class="error-msg" id="emailError" style="color: #e74c3c; font-size: 12px; display: block; min-height: 15px;"></span>
 
             <label>Password</label>
-            <input type="password" placeholder="Enter your password">
+            <input type="password" id="password" placeholder="Enter your password">
+            <span class="error-msg" id="passError" style="color: #e74c3c; font-size: 12px; display: block; min-height: 15px;"></span>
 
             <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm your password">
+            <input type="password" id="confirmPassword" placeholder="Confirm your password">
+            <span class="error-msg" id="confirmError" style="color: #e74c3c; font-size: 12px; display: block; min-height: 15px;"></span>
 
             <button type="submit" id="send-messege">Sign Up</button>
-
         </form>
 
     </section>
@@ -53,5 +55,4 @@
     <script src="main.js"></script>
 
 </body>
-
 </html>
