@@ -58,7 +58,31 @@ function changeimage(img){
     document.getElementById("mainimage").src = img.src;
 }
 
-function aadtocart(){
+function addtocart(){
     alert("product added to cart!");
+}
+
+function searchProduct() {
+    const searchInput = document.getElementById("searchInput");
+    if (!searchInput) return;
+
+    const query = searchInput.value.trim().toLowerCase();
+    const productCards = document.querySelectorAll(".product-card");
+
+    if (productCards.length > 0) {
+        productCards.forEach((card) => {
+            const cardText = card.innerText.toLowerCase();
+            card.style.display = cardText.includes(query) ? "" : "none";
+        });
+        return;
+    }
+
+    const imageItems = document.querySelectorAll("#img li");
+    if (imageItems.length > 0) {
+        imageItems.forEach((item) => {
+            const itemText = item.innerText.toLowerCase();
+            item.style.display = itemText.includes(query) ? "" : "none";
+        });
+    }
 }
 
